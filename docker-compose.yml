@@ -1,0 +1,46 @@
+version: '3'
+services:
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "18080:80"  # Expose le frontend sur le port 18080
+    networks:
+      - app-network
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "15000:5000"  # Le backend est exposé sur le port interne 15000
+    networks:
+      - app-network
+    depends_on:
+      - mongo
+    volumes:
+      - ./backend/uploads:/usr/src/app/uploads  # Conserve les uploads
+
+  mongo:
+    image: mongo:latest #arm64v8/mongo:4.4.18
+    networks:
+      - app-network  # MongoDB est uniquement accessible dans le réseau Docker interne
+    volumes:
+      - ./data/mongo:/data/db  # Stockage persistant des données MongoDB
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"  # Nginx exposé sur le port 80
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf  # Monter le fichier de configuration Nginx
+    depends_on:
+      - frontend
+      - backend
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge  # Réseau interne utilisé uniquement entre les services Docker

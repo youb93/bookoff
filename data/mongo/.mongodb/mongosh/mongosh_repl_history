@@ -1,0 +1,41 @@
+db.books.deleteMany({})
+db.books.find()
+use bookDB
+db.books.find()
+use bookDB
+db.books.deleteMany({})
+db.books.find()
+db.books.deleteMany({})
+db.books.find()
+db.books.drop
+db.books.deleteMany(3)
+db.books.deleteMany()
+use bookDB
+db.books.find()
+use bookDB
+db.books.find()
+use bookDB
+db.books.find()
+use bookDB
+db.books.find()
+db.books.deleteOne({_id: ObjectId("67df0e9f8b7b7ea0ec48ca5f"),price: 22,description: 'so',images: [],__v: 0})
+clear
+  }
+    __v: 0
+description: 'so', images: [],
+_id: ObjectId("67df0e9f8b7b7ea0ec48ca5f"), price: 22,
+db.books.deleteOne({)
+db.books.deleteOne(ObjectId("67df0e9f8b7b7ea0ec48ca5f"))
+db.books.deleteOne('67df0e9f8b7b7ea0ec48ca5f')
+db.books.deleteOne(67df0e9f8b7b7ea0ec48ca5f)
+db.books.deleteOne()
+db.books.remove()
+db.books.delete()
+db.books.find()
+use bookDB
+db.books.find()
+use bookDB
+db.books.find()
+use bookDB
+show databases
+show database

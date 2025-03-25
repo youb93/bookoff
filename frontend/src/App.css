@@ -1,0 +1,35 @@
+/* Styles de la barre de navigation */
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .nav-item {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 12px 20px;
+    margin: 0 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .nav-item:hover {
+    background-color: #007BFF;
+    border-radius: 5px;
+  }
+  
+  /* Réactivité sur les petits écrans */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .nav-item {
+      margin: 5px 0;
+      font-size: 16px;
+    }
+  }
